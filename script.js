@@ -14,6 +14,8 @@ function addBook() {
 
 function removeBook(title) {
   delete bookCollection[title];
+  document.body.querySelector('#list-of-books').innerHTML = '';
+  createList();
 }
 
 function createList() {
@@ -34,6 +36,11 @@ function createList() {
 
     bookSection.append(title, author, removeButton, dividerLine);
     document.body.querySelector('#list-of-books').append(bookSection);
-});
+
+    document.body
+      .querySelector('#' + book)
+      .addEventListener('click', function () {
+        removeBook(book);
+      });
   });
 }
