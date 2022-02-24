@@ -6,8 +6,6 @@ function addBook() {
   let addTitle = document.getElementById('title').value;
   let addAuthor = document.getElementById('author').value;
   bookCollection[addTitle] = addAuthor;
-  console.log(addTitle);
-  console.log(bookCollection);
   document.body.querySelector('#list-of-books').innerHTML = '';
   createList();
 }
