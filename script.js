@@ -1,5 +1,4 @@
 let bookCollection = {};
-
 let booksArray = Object.keys(bookCollection);
 if (window.localStorage.getItem('books')) {
   storedBooks = window.localStorage.getItem('books');
@@ -15,6 +14,7 @@ function storeBooks() {
 function addBook() {
   let addTitle = document.getElementById('title').value;
   let addAuthor = document.getElementById('author').value;
+  document.getElementById('form').reset();
   bookCollection[addTitle] = addAuthor;
   storeBooks();
   document.body.querySelector('#list-of-books').innerHTML = '';
