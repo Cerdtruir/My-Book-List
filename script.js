@@ -1,45 +1,22 @@
 let bookCollection = {};
 let booksArray = Object.keys(bookCollection);
-if (window.localStorage.getItem('books')) {
-  storedBooks = window.localStorage.getItem('books');
-  bookCollection = JSON.parse(storedBooks);
-  document.body.querySelector('#list-of-books').innerHTML = '';
-  createList();
-}
 
 function storeBooks() {
   window.localStorage.setItem('books', JSON.stringify(bookCollection));
 }
 
-function addBook() {
-  let addTitle = document.getElementById('title').value;
-  let addAuthor = document.getElementById('author').value;
-  document.getElementById('form').reset();
-  bookCollection[addTitle] = addAuthor;
-  storeBooks();
-  document.body.querySelector('#list-of-books').innerHTML = '';
-  createList();
-}
-
-function removeBook(title) {
-  delete bookCollection[title];
-  storeBooks();
-  document.body.querySelector('#list-of-books').innerHTML = '';
-  createList();
-}
-
 function createList() {
   booksArray = Object.keys(bookCollection);
   booksArray.forEach((book) => {
-    removeButton = document.createElement('button');
-    dividerLine = document.createElement('hr');
+    const removeButton = document.createElement('button');
+    const dividerLine = document.createElement('hr');
 
     removeButton.innerHTML = 'Remove';
     removeButton.id = book;
 
-    bookSection = document.createElement('div');
-    title = document.createElement('p');
-    author = document.createElement('p');
+    const bookSection = document.createElement('div');
+    const title = document.createElement('p');
+    const author = document.createElement('p');
 
     title.innerHTML = book;
     author.innerHTML = bookCollection[book];
@@ -47,10 +24,38 @@ function createList() {
     bookSection.append(title, author, removeButton, dividerLine);
     document.body.querySelector('#list-of-books').append(bookSection);
 
-    document.body
-      .querySelector('#' + book)
-      .addEventListener('click', function () {
-        removeBook(book);
-      });
+    document.body.querySelector(`#${book}`).addEventListener('click', () => {
+      // eslint-disable-next-line no-use-before-define
+      removeBook(book);
+    });
   });
+}
+
+function updateHTML() {
+  document.body.querySelector('#list-of-books').innerHTML = '';
+  createList();
+}
+
+function removeBook(title) {
+  delete bookCollection[title];
+  storeBooks();
+  updateHTML();
+}
+
+if (window.localStorage.getItem('books')) {
+  const storedBooks = window.localStorage.getItem('books');
+  bookCollection = JSON.parse(storedBooks);
+  document.body.querySelector('#list-of-books').innerHTML = '';
+  createList();
+}
+
+// eslint-disable-next-line no-unused-vars
+function addBook() {
+  const addTitle = document.getElementById('title').value;
+  const addAuthor = document.getElementById('author').value;
+  document.getElementById('form').reset();
+  bookCollection[addTitle] = addAuthor;
+  storeBooks();
+  document.body.querySelector('#list-of-books').innerHTML = '';
+  createList();
 }
