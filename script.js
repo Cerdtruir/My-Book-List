@@ -1,35 +1,39 @@
 let bookCollection = {};
 
-function addBook(title, author) {
-  bookCollection[title] = author;
+let booksArray = Object.keys(bookCollection);
+
+function addBook() {
+  let addTitle = document.getElementById('title').value;
+  let addAuthor = document.getElementById('author').value;
+  bookCollection[addTitle] = addAuthor;
+  console.log(addTitle);
+  console.log(bookCollection);
+  document.body.querySelector('#list-of-books').innerHTML = '';
+  createList();
 }
 
 function removeBook(title) {
   delete bookCollection[title];
 }
 
-addBook('title', 'author');
-addBook('ban', 'ban author');
-addBook('apple', 'apple author');
-removeBook('ban');
+function createList() {
+  booksArray = Object.keys(bookCollection);
+  booksArray.forEach((book) => {
+    removeButton = document.createElement('button');
+    dividerLine = document.createElement('hr');
 
-const booksArray = Object.keys(bookCollection);
+    removeButton.innerHTML = 'Remove';
+    removeButton.id = book;
 
-document.getElementById('list-of-books');
+    bookSection = document.createElement('div');
+    title = document.createElement('p');
+    author = document.createElement('p');
 
-booksArray.forEach((book) => {
-  removeButton = document.createElement('button');
-  dividerLine = document.createElement('hr');
+    title.innerHTML = book;
+    author.innerHTML = bookCollection[book];
 
-  removeButton.innerHTML = 'Remove';
-
-  bookSection = document.createElement('div');
-  title = document.createElement('p');
-  author = document.createElement('p');
-
-  title.innerHTML = book;
-  author.innerHTML = bookCollection[book];
-
-  bookSection.append(title, author, removeButton, dividerLine);
-  document.body.querySelector('#list-of-books').append(bookSection);
+    bookSection.append(title, author, removeButton, dividerLine);
+    document.body.querySelector('#list-of-books').append(bookSection);
 });
+  });
+}
