@@ -70,10 +70,6 @@ nav {
   border: 3px solid black;
 }
 
-.form-heading {
-  margin: 0;
-}
-
 form {
   display: flex;
   flex-direction: column;
