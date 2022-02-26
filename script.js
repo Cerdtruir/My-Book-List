@@ -79,3 +79,31 @@ storageArray.forEach((book) => {
   bookList.addBook(storage[book].title, storage[book].author);
 });
 updateHTML();
+
+const listOfBooks = document.getElementById('list-of-books');
+const addNew = document.getElementById('form');
+const contact = document.getElementById('contact');
+
+addNew.classList.add('hide');
+contact.classList.add('hide');
+
+// eslint-disable-next-line no-unused-vars
+function listPage() {
+  listOfBooks.classList.remove('hide');
+  addNew.classList.add('hide');
+  contact.classList.add('hide');
+}
+
+// eslint-disable-next-line no-unused-vars
+function addPage() {
+  addNew.classList.remove('hide');
+  listOfBooks.classList.add('hide');
+  contact.classList.add('hide');
+}
+
+// eslint-disable-next-line no-unused-vars
+function contactPage() {
+  contact.classList.remove('hide');
+  listOfBooks.classList.add('hide');
+  addNew.classList.add('hide');
+}
