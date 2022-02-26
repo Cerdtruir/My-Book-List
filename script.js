@@ -17,8 +17,9 @@ const bookList = new Books();
 function storeBooks() {
   window.localStorage.setItem('books', JSON.stringify(bookList));
 }
-
+let i = 0;
 function createList() {
+  i = 0;
   const booksArray = Object.keys(bookList);
   booksArray.forEach((book) => {
     const removeButton = document.createElement('button');
@@ -35,6 +36,9 @@ function createList() {
     bookSection.classList.add('book-section');
     title.classList.add('book-title');
     removeButton.classList.add('remove-button');
+    if (i % 2 === 0) {
+      bookSection.classList.add('grey-background');
+    }
 
     bookSection.append(title, author, removeButton);
     document.body.querySelector('#list-of-books').append(bookSection);
@@ -43,6 +47,7 @@ function createList() {
       // eslint-disable-next-line no-use-before-define
       removeBook(book);
     });
+    i += 1;
   });
 }
 
