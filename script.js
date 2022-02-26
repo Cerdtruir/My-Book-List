@@ -30,8 +30,9 @@ function createList() {
     const title = document.createElement('p');
     const author = document.createElement('p');
 
-    title.innerHTML = bookList[book].title;
-    author.innerHTML = bookList[book].author;
+    bookSection.classList.add('book-section');
+    title.classList.add('book-title');
+    removeButton.classList.add('remove-button');
 
     bookSection.append(title, author, removeButton, dividerLine);
     document.body.querySelector('#list-of-books').append(bookSection);
