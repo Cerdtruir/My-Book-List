@@ -41,7 +41,7 @@ function createList() {
     }
 
     bookSection.append(title, author, removeButton);
-    document.body.querySelector('#list-of-books').append(bookSection);
+    document.body.querySelector('#books').append(bookSection);
 
     document.getElementById(id).addEventListener('click', () => {
       // eslint-disable-next-line no-use-before-define
@@ -52,7 +52,7 @@ function createList() {
 }
 
 function updateHTML() {
-  document.body.querySelector('#list-of-books').innerHTML = '';
+  document.body.querySelector('#books').innerHTML = '';
   createList();
 }
 

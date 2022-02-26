@@ -34,10 +34,17 @@ ul {
   height: 30%;
 }
 
-#list-of-books {
+.list-of-books {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.list-heading {
+  text-align: center;
+}
+
+.books {
   border: 3px solid black;
 }
 
