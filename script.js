@@ -17,9 +17,9 @@ const bookList = new Books();
 function storeBooks() {
   window.localStorage.setItem('books', JSON.stringify(bookList));
 }
-let i = 0;
+
 function createList() {
-  i = 0;
+  let i = 0;
   const booksArray = Object.keys(bookList);
   booksArray.forEach((book) => {
     const removeButton = document.createElement('button');
