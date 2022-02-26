@@ -22,7 +22,6 @@ function createList() {
   const booksArray = Object.keys(bookList);
   booksArray.forEach((book) => {
     const removeButton = document.createElement('button');
-    const dividerLine = document.createElement('hr');
     const id = bookList[book].title + bookList[book].author;
     removeButton.innerHTML = 'Remove';
     removeButton.id = id;
