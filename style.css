@@ -4,6 +4,7 @@ body {
   align-items: center;
   font-family: "Courier New", Courier, monospace;
   font-weight: 700;
+  height: 100vh;
 }
 
 #list-of-books {
@@ -57,4 +58,11 @@ form {
 .form-button {
   align-self: flex-end;
   width: 20%;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  border: 3px solid black;
 }
