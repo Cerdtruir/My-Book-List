@@ -1,6 +1,9 @@
 class Books {
   addBook(title, author) {
     const id = title + author;
+    if (!title || !author) {
+      return;
+    }
     this[id] = { title, author };
   }
 
