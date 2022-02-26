@@ -35,13 +35,6 @@ body {
   border: 3px solid black;
 }
 
-hr {
-  width: 20%;
-  height: 2px;
-  background-color: black;
-  margin: 20px 0;
-}
-
 .form-heading {
   margin: 0;
 }
