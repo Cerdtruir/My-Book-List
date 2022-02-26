@@ -1,10 +1,63 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+}
+
+#list-of-books {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 3px solid black;
+}
+
+.book-section {
+  display: flex;
+  margin: 0 10px;
+  align-items: center;
+}
+
+.book-title {
+  margin: 0;
+}
+
+.remove-button {
+  margin-left: auto;
+  height: 50%;
+  background-color: white;
+  font-weight: 700;
+  border: 3px solid black;
+}
+
+hr {
+  width: 20%;
+  height: 2px;
+  background-color: black;
+  margin: 20px 0;
+}
+
+.form-heading {
+  margin: 0;
+}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 50%;
+  align-items: center;
 }
 
-input,
-button {
-  width: 10%;
+.form-inputs {
+  box-sizing: border-box;
+  font-weight: 900;
+  width: 100%;
+  border: 3px solid black;
+}
+
+.form-button {
+  align-self: flex-end;
+  width: 20%;
 }
