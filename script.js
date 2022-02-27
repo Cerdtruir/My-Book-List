@@ -110,3 +110,13 @@ function contactPage() {
   listOfBooks.classList.add('hide');
   addNew.classList.add('hide');
 }
+
+// eslint-disable-next-line no-undef
+const { DateTime } = luxon;
+const now = DateTime.now();
+const nowFormatted = now.toLocaleString(DateTime.DATETIME_MED);
+
+const time = document.createElement('p');
+time.innerHTML = now;
+time.classList.add('time-element');
+document.body.querySelector('.time').append(nowFormatted);

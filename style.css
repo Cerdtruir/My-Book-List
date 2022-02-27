@@ -34,6 +34,10 @@ nav {
   height: 30%;
 }
 
+.time {
+  margin: 10px 0 0 auto;
+}
+
 .list-of-books {
   display: flex;
   flex-direction: column;
