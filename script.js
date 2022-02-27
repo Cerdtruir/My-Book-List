@@ -82,6 +82,7 @@ if (window.localStorage.getItem('books')) {
   updateHTML();
 }
 
+// Hide or dsiplay sections depending on page
 const listOfBooks = document.getElementById('list-of-books');
 const addNew = document.getElementById('form');
 const contact = document.getElementById('contact');
