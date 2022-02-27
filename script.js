@@ -72,13 +72,15 @@ function removeBook(id) {
   updateHTML();
 }
 
-const storedBooks = window.localStorage.getItem('books');
-const storage = JSON.parse(storedBooks);
-const storageArray = Object.keys(storage);
-storageArray.forEach((book) => {
-  bookList.addBook(storage[book].title, storage[book].author);
-});
-updateHTML();
+if (window.localStorage.getItem('books')) {
+  const storedBooks = window.localStorage.getItem('books');
+  const storage = JSON.parse(storedBooks);
+  const storageArray = Object.keys(storage);
+  storageArray.forEach((book) => {
+    bookList.addBook(storage[book].title, storage[book].author);
+  });
+  updateHTML();
+}
 
 const listOfBooks = document.getElementById('list-of-books');
 const addNew = document.getElementById('form');
