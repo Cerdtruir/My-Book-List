@@ -24,14 +24,14 @@ function createList() {
   booksArray.forEach((book) => {
     const removeButton = document.createElement('button');
     const id = bookList[book].title + bookList[book].author;
-    removeButton.innerHTML = 'Remove';
+    removeButton.innerText = 'Remove';
     removeButton.id = id;
 
     const bookSection = document.createElement('div');
     const title = document.createElement('p');
     const author = document.createElement('p');
 
-    title.innerHTML = `"${bookList[book].title}" by ${bookList[book].author}`;
+    title.innerText = `"${bookList[book].title}" by ${bookList[book].author}`;
 
     bookSection.classList.add('book-section');
     title.classList.add('book-title');
@@ -52,7 +52,7 @@ function createList() {
 }
 
 function updateHTML() {
-  document.body.querySelector('#books').innerHTML = '';
+  document.body.querySelector('#books').innerText = '';
   createList();
 }
 
