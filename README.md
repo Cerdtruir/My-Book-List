@@ -2,6 +2,10 @@
 
 A website to store a list of books that i want to read
 
+## Screenshot
+
+![screenshot](./screenshot.png)
+
 ## Built With
 
 - HTML
