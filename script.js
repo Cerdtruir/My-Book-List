@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-use-before-define */
 class Books {
   addBook(title, author) {
     const id = title + author;
@@ -44,7 +46,6 @@ function createList() {
     document.body.querySelector('#books').append(bookSection);
 
     document.getElementById(id).addEventListener('click', () => {
-      // eslint-disable-next-line no-use-before-define
       removeBook(book);
     });
     i += 1;
@@ -56,7 +57,6 @@ function updateHTML() {
   createList();
 }
 
-// eslint-disable-next-line no-unused-vars
 function addBook() {
   const addTitle = document.getElementById('title').value;
   const addAuthor = document.getElementById('author').value;
@@ -91,21 +91,18 @@ const contact = document.getElementById('contact');
 addNew.classList.add('hide');
 contact.classList.add('hide');
 
-// eslint-disable-next-line no-unused-vars
 function listPage() {
   listOfBooks.classList.remove('hide');
   addNew.classList.add('hide');
   contact.classList.add('hide');
 }
 
-// eslint-disable-next-line no-unused-vars
 function addPage() {
   addNew.classList.remove('hide');
   listOfBooks.classList.add('hide');
   contact.classList.add('hide');
 }
 
-// eslint-disable-next-line no-unused-vars
 function contactPage() {
   contact.classList.remove('hide');
   listOfBooks.classList.add('hide');
