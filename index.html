@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Book List</title>
+  </head>
+  <body>
+    <nav>
+      <h2 class="nav-heading">My Book List</h2>
+      <ul class="nav-list">
+        <li>
+          <button onclick="listPage()" type="button" class="nav-button">
+            List Of Books
+          </button>
+        </li>
+        <li>
+          <button onclick="addPage()" type="button" class="nav-button">
+            Add New Book
+          </button>
+        </li>
+        <li>
+          <button onclick="contactPage()" type="button" class="nav-button">
+            Contact
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <aside class="time"></aside>
+    <section id="list-of-books" class="list-of-books">
+      <h2 class="list-heading">List Of Books</h2>
+      <section class="books" id="books"></section>
+    </section>
+    <form id="form">
+      <h2 class="form-heading">Add a new book</h2>
+      <input class="form-inputs" id="title" placeholder="Title" type="text" />
+      <input class="form-inputs" id="author" placeholder="Author" type="text" />
+      <button class="form-inputs form-button" onclick="addBook()" type="button">
+        Add
+      </button>
+    </form>
+    <section class="contact" id="contact">
+      <h2>Contact Information</h2>
+      <p>
+        If you have any questions or suggestions you can reach out to me at:
+      </p>
+      <ul class="contact-list">
+        <li class="contact-list-items">https://github.com/Cerdtruir</li>
+        <li class="contact-list-items">https://github.com/Cerdtruir</li>
+        <li class="contact-list-items">https://github.com/Cerdtruir</li>
+      </ul>
+    </section>
+    <footer>
+      <p>Copywright 2022</p>
+    </footer>
+    <script src="luxon.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
