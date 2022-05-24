@@ -7,7 +7,7 @@ class Books {
     this[id] = { title, author };
   }
 
-  remveBook(id) {
+  deleteBook(id) {
     delete this[id];
   }
 }
@@ -67,7 +67,7 @@ function addBook() {
 }
 
 function removeBook(id) {
-  delete bookList[id];
+  bookList.deleteBook(id);
   storeBooks();
   updateHTML();
 }
