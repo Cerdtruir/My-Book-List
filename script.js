@@ -64,6 +64,7 @@ function addBook() {
   document.getElementById('form').reset();
   storeBooks();
   updateHTML();
+  listPage();
 }
 
 function removeBook(id) {
