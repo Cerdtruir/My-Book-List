@@ -14,7 +14,7 @@ A website to store a list of books that i want to read
 
 ## Live Demo
 
-[Live Demo Link](https://cerdtruir.github.io/First-Project/)
+[Live Demo Link](https://cerdtruir.github.io/My-Book-List/)
 
 ## Authors
 
